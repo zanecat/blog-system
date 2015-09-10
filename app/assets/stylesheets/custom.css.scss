@@ -19,6 +19,12 @@ section {
 textarea {
   resize: vertical;
 }
+
+div{ 
+  word-wrap: break-word; 
+  word-break: normal; 
+}
+
 .center {
   text-align: center;
 }
@@ -165,8 +171,9 @@ input {
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
-} 
+  } 
 }
+
 .title {
   display: block;
 }
