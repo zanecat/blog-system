@@ -10,6 +10,7 @@
 					Author: <%= link_to @post.user.name, @post.user %>
 				</h4>
 			<p class="blog-post-meta">Posted <%= time_ago_in_words(@post.created_at) %> ago.</p>
+			<p class="blog-post-meta">Last update at <%= time_ago_in_words(@post.updated_at) %> ago.</p>
 			<% if current_user?(@post.user) %>
 			<%= link_to "delete", @post, method: :delete, data: { confirm: "You sure?" }, title: @post.title %>
 			<%= link_to "edit", edit_post_path(@post) %>
