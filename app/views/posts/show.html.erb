@@ -1,0 +1,19 @@
+<% provide(:title, @post.title) %>
+<div class="container">
+<div class="row">
+	<aside class="span4">
+		<section>
+		<div>
+		<h3><%= @post.title %></h3>
+		</div>
+			<h1>
+				<%= gravatar_for @post.user %>
+				Author: <%= link_to @post.user.name, @post.user %>
+			</h1>
+		</section>
+	</aside>
+	<div class="container">
+		<p><%= @post.content %></p>
+	</div>
+</div>
+</div>
