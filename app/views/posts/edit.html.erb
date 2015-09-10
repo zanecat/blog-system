@@ -1,0 +1,14 @@
+<% provide(:title, "Edit post") %>
+<h1>Update your post</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@post) do |p| %>
+      <%= render 'shared/error_messages', object: p.object %>
+      <%= p.label :title %>
+      <%= p.text_field :title %>
+      <%= p.label :content %>
+      <%= p.text_area :content %>
+      <%= p.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <% end %>
+  </div>
+</div>
