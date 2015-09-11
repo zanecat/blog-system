@@ -6,9 +6,9 @@
 		<div class="blog-post">
 			<h1 class="blog-post-title"><%= @post.title %></h1>
 			<h4>
-					<%= gravatar_for @post.user %>
-					Author: <%= link_to @post.user.name, @post.user %>
-				</h4>
+				<%= gravatar_for @post.user %>
+				Author: <%= link_to @post.user.name, @post.user %>
+			</h4>
 			<p class="blog-post-meta">Posted <%= time_ago_in_words(@post.created_at) %> ago.</p>
 			<p class="blog-post-meta">Last update at <%= time_ago_in_words(@post.updated_at) %> ago.</p>
 			<% if current_user?(@post.user) %>
@@ -16,37 +16,6 @@
 			<%= link_to "edit", edit_post_path(@post) %>
 			<% end %>
 			<div class="content">
-			<p><%= simple_format @post.content %></p>
+				<p><%= simple_format @post.content %></p>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-		<!-- <aside class="span4">
-			<section>
-				<div>
-					<h3><%= @post.title %></h3>
-				</div>
-				<h1>
-					<%= gravatar_for @post.user %>
-					Author: <%= link_to @post.user.name, @post.user %>
-				</h1>
-				<span class="timestamp">
-					Posted <%= time_ago_in_words(@post.created_at) %> ago.
-				</span>
-				<% if current_user?(@post.user) %>
-				<%= link_to "delete", @post, method: :delete, data: { confirm: "You sure?" }, title: @post.title %>
-				<%= link_to "edit", edit_post_path(@post) %>
-				<% end %>
-			</section>
-		</aside>
-		<div class="content">
-			<p><%= @post.content %></p>
-		</div>
-	</div> -->
