@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910101518) do
+ActiveRecord::Schema.define(version: 20150911103416) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20150910101518) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "vip_post",   default: false
+  end
+
+  add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
