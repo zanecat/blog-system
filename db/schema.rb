@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20150911103416) do
     t.boolean  "vip_post",   default: false
   end
 
-  add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
-
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
