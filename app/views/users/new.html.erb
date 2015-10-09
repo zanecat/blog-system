@@ -8,8 +8,10 @@
 		<%= f.text_field :name %>
 		<%= f.label :email %>
 		<%= f.text_field :email %>
+		<%= f.label :enterprise%>
+		<%= f.check_box :enterprise %>
 		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<%= f.password_field :password %>		
 		<%= f.label :password_confirmation, "Confirmation" %>
 		<%= f.password_field :password_confirmation %>
 		<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
