@@ -18,7 +18,7 @@
 		</section>
 	</aside>
 	<div class="span8">
-		<%= render 'follow_form' if signed_in? %>
+		<%= render 'follow_form' if signed_in? && @user.enterprise %>
 	</div>
 	<div class="span8">
 		<% if @user.posts.any? %>
