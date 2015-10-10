@@ -2,8 +2,17 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "blog", root_path, id: "logo" %>
+
+      
+
       <nav>
         <ul class="nav pull-right">
+        <li>
+        <%= form_tag search_path, :method => 'get', "margin-bottom"=>0 do %>
+        
+          <%= text_field_tag :search, params[:search], placeholder: "search" %>
+        </li>
+      <% end %>
           <li><%= link_to "Home",    root_path %></li>
           <li><%= link_to "Help",    help_path %></li>
           <% if signed_in? %>
@@ -24,6 +33,9 @@
           <% else %>
           <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
+
+            
+          
         </ul> 
       </nav>
     </div>
