@@ -5,7 +5,9 @@
 			<%= gravatar_for @user %>
 			<h1><%= @user.name %></h1>
 			<span><%= link_to "view my profile", @user %></span>
-			<span><b>Microposts:</b> <%= @user.posts.count %></span>
+			<% if @user.enterprise %>
+				<span><%= @user.posts.count %> posts</span>
+			<% end %>
 		</section>
 		<section>
 			<%= render 'shared/stats' %>

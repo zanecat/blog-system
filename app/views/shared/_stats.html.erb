@@ -4,12 +4,14 @@
 		<strong id="following" class="stat">
 			<%= @user.followed_users.count %>
 		</strong>
-		following
+		Subscribing
 	</a>
+	<% if @user.enterprise %>
 	<a href="<%= followers_user_path(@user) %>">
 		<strong id="followers" class="stat">
 			<%= @user.followers.count %>
 		</strong>
-		followers
+		Subscribers
 	</a>
+	<% end %>
 </div>
