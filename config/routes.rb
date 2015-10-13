@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+
   resources :posts
+  resources :messages
   resources :users do
     member do
       get :following, :followers
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   root to: 'static_pages#home'
+  match 'message', to: 'messages#index', via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
