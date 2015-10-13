@@ -18,6 +18,15 @@ class MessagesController < ApplicationController
 		end
 	end
 
+	def delete
+		@relationship=Relationship.find_by(follower_id: params[:unsid1], followed_id: params[:unsid2])
+		@relationship.destroy
+		@message=Message.find_by(unsubscriber_id: params[:unsid1], unsubscribed_id: params[:unsid2])
+		@message.destroy
+		flash[:success]="Successfully unsubscribe!"
+		redirect_to messages_path
+	end
+
 	def admin_user
 		current_user.admin?
 	end

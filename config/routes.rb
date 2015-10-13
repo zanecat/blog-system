@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'messages/index'
-
+  post 'users/new_message'
+  post 'messages/delete'
+  
   resources :posts
   resources :messages
   resources :users do

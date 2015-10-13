@@ -1,2 +1,1 @@
-
-<%= button_to('Unsubscribe', method: :create, params:{unprocessed: false, unsubscriber_id: current_user.id, unsubscribed_id: params[:id]})%>
+<%= button_to "Unsubscribe", users_new_message_path(:unsid => params[:id]), class: "btn btn-large btn-primary" %>

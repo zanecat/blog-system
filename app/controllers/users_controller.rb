@@ -64,7 +64,14 @@ class UsersController < ApplicationController
 	end
 
 	def new_message
-		@message=Message.new()
+		@message=Message.new(unsubscriber_id: current_user.id, unsubscribed_id: params[:unsid], processed: false)
+		if @message.save
+			flash[:success]="Request has been sent!"
+			redirect_to User.find(params[:unsid])
+		else
+			flash[:fail]="Error, don't request again!"
+			redirect_to User.find(params[:unsid])
+		end
 	end
 
 	private
