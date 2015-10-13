@@ -1,4 +1,2 @@
-<%= form_for(current_user.relationships.find_by(followed_id: @user),
-html: { method: :delete }) do |f| %>
-<%= f.submit "Unsubscribe", class: "btn btn-large" %>
-<% end %>
+
+<%= button_to('Unsubscribe', method: :create, params:{unprocessed: false, unsubscriber_id: current_user.id, unsubscribed_id: params[:id]})%>

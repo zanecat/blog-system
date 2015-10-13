@@ -37,7 +37,6 @@ class UsersController < ApplicationController
 
 	def search
 		@users = User.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
-
 	end
 
 	def index
@@ -62,6 +61,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@users = @user.followers.paginate(page: params[:page])
 		render 'show_follow'
+	end
+
+	def new_message
+		@message=Message.new()
 	end
 
 	private
