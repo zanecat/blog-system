@@ -37,6 +37,8 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'rails-perftest'
 
 gem 'ruby-prof'
+
+gem 'actionpack-page_caching'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
